@@ -1,0 +1,99 @@
+region,category,chiffre_affaires,nb_transactions,part_ca_region_pct
+Auvergne-Rhône-Alpes,Automotive,2144976.9,2233,32.36
+Auvergne-Rhône-Alpes,Electronics,1866340.27,1347,28.16
+Auvergne-Rhône-Alpes,Home & Garden,1031942.59,1856,15.57
+Auvergne-Rhône-Alpes,Sports,549853.5,1642,8.3
+Auvergne-Rhône-Alpes,Toys,274422.84,2599,4.14
+Auvergne-Rhône-Alpes,Health,256006.64,1705,3.86
+Auvergne-Rhône-Alpes,Beauty,168804.89,1774,2.55
+Auvergne-Rhône-Alpes,Books,116597.38,2572,1.76
+Auvergne-Rhône-Alpes,Clothing,114222.23,518,1.72
+Auvergne-Rhône-Alpes,Food,104789.72,2047,1.58
+Bretagne,Automotive,2220265.87,2018,48.34
+Bretagne,Electronics,1072037.08,710,23.34
+Bretagne,Sports,661733.81,1902,14.41
+Bretagne,Home & Garden,198954.5,409,4.33
+Bretagne,Clothing,181950.99,800,3.96
+Bretagne,Toys,88388.51,919,1.92
+Bretagne,Food,73857.95,1058,1.61
+Bretagne,Health,53378.34,471,1.16
+Bretagne,Books,24998.53,528,0.54
+Bretagne,Beauty,17612.08,195,0.38
+Grand Est,Electronics,1371736.53,863,34.5
+Grand Est,Automotive,1020524.9,1028,25.67
+Grand Est,Home & Garden,495603.7,1021,12.47
+Grand Est,Health,250123.67,1658,6.29
+Grand Est,Clothing,222700.64,1065,5.6
+Grand Est,Sports,200079.29,470,5.03
+Grand Est,Beauty,156185.89,1327,3.93
+Grand Est,Toys,122187.1,1135,3.07
+Grand Est,Food,86740.27,1351,2.18
+Grand Est,Books,49679.39,1129,1.25
+Hauts-de-France,Home & Garden,1360465.31,2093,30.82
+Hauts-de-France,Electronics,936920.13,867,21.23
+Hauts-de-France,Sports,881518.23,2243,19.97
+Hauts-de-France,Clothing,435186.73,1806,9.86
+Hauts-de-France,Automotive,223404.5,184,5.06
+Hauts-de-France,Beauty,186907.55,1646,4.23
+Hauts-de-France,Toys,167084.59,1694,3.79
+Hauts-de-France,Health,154404.58,968,3.5
+Hauts-de-France,Food,35046.19,557,0.79
+Hauts-de-France,Books,32624.67,673,0.74
+Ile-de-France,Automotive,3569102.71,3246,32.71
+Ile-de-France,Electronics,3240937.19,2268,29.7
+Ile-de-France,Sports,1086481.17,3154,9.96
+Ile-de-France,Clothing,1011828.69,5018,9.27
+Ile-de-France,Home & Garden,822591.49,1680,7.54
+Ile-de-France,Health,392038.93,2491,3.59
+Ile-de-France,Beauty,360808.81,3238,3.31
+Ile-de-France,Food,160738.1,2496,1.47
+Ile-de-France,Toys,155928.33,1439,1.43
+Ile-de-France,Books,112379.29,2428,1.03
+Normandie,Electronics,1723185.53,1236,51.12
+Normandie,Home & Garden,759430.73,1371,22.53
+Normandie,Sports,382028.91,984,11.33
+Normandie,Automotive,161429.28,152,4.79
+Normandie,Health,113359.98,808,3.36
+Normandie,Food,75549.4,1209,2.24
+Normandie,Toys,60992.26,604,1.81
+Normandie,Clothing,51281.71,293,1.52
+Normandie,Books,43527.72,923,1.29
+Nouvelle-Aquitaine,Electronics,2680817.93,1727,40.91
+Nouvelle-Aquitaine,Automotive,1745063.1,1955,26.63
+Nouvelle-Aquitaine,Home & Garden,925169.41,1845,14.12
+Nouvelle-Aquitaine,Beauty,308794.71,2768,4.71
+Nouvelle-Aquitaine,Health,266158.38,1938,4.06
+Nouvelle-Aquitaine,Toys,163630.86,1503,2.5
+Nouvelle-Aquitaine,Sports,142473.28,502,2.17
+Nouvelle-Aquitaine,Food,136920.5,2301,2.09
+Nouvelle-Aquitaine,Clothing,107386.51,581,1.64
+Nouvelle-Aquitaine,Books,76255.44,1779,1.16
+Occitanie,Automotive,1911669.75,1737,41.22
+Occitanie,Electronics,1312068.58,1003,28.29
+Occitanie,Clothing,310140.74,1573,6.69
+Occitanie,Home & Garden,286872.28,663,6.19
+Occitanie,Toys,236378.15,2317,5.1
+Occitanie,Sports,188144.7,425,4.06
+Occitanie,Health,185686.44,1168,4.0
+Occitanie,Food,77169.2,1087,1.66
+Occitanie,Beauty,72290.36,701,1.56
+Occitanie,Books,57757.9,1139,1.25
+Pays de la Loire,Electronics,1664243.25,1196,52.99
+Pays de la Loire,Home & Garden,496463.94,926,15.81
+Pays de la Loire,Automotive,437576.98,469,13.93
+Pays de la Loire,Sports,238782.31,627,7.6
+Pays de la Loire,Health,94253.2,622,3.0
+Pays de la Loire,Clothing,77053.78,426,2.45
+Pays de la Loire,Beauty,59319.91,602,1.89
+Pays de la Loire,Books,46438.33,1002,1.48
+Pays de la Loire,Food,26478.32,472,0.84
+Provence-Alpes-Côte d'Azur,Electronics,1630557.72,1153,45.47
+Provence-Alpes-Côte d'Azur,Home & Garden,829019.0,1464,23.12
+Provence-Alpes-Côte d'Azur,Sports,371397.28,923,10.36
+Provence-Alpes-Côte d'Azur,Health,223399.51,1504,6.23
+Provence-Alpes-Côte d'Azur,Clothing,218967.59,1043,6.11
+Provence-Alpes-Côte d'Azur,Automotive,79561.77,157,2.22
+Provence-Alpes-Côte d'Azur,Toys,78045.91,828,2.18
+Provence-Alpes-Côte d'Azur,Beauty,73116.52,769,2.04
+Provence-Alpes-Côte d'Azur,Books,43471.5,1032,1.21
+Provence-Alpes-Côte d'Azur,Food,38175.87,758,1.06

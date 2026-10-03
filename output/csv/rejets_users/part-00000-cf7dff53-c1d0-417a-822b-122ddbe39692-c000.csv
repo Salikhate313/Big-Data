@@ -1,0 +1,346 @@
+user_id,age,annual_income,city,customer_segment,preferred_categories,registration_date,rejection_reason
+U00003,12,26625.39,Paris,Standard,"Sports,Books,Home & Garden",20230619,age_hors_intervalle
+U00006,14,37311.58,Paris,Standard,"Food,Clothing,Sports",20230208,age_hors_intervalle
+U00061,140,72790.44,Toulouse,Premium,"Health,Electronics",20240905,age_hors_intervalle
+U00134,-3,-1500.0,Paris,Standard,Automotive,20240108,age_hors_intervalle | income <= 0
+U00138,51,0.0,Marseille,Budget,"Clothing,Sports",20250917,income <= 0
+U00163,19,0.0,Toulouse,Budget,"Books,Food,Electronics",20240410,income <= 0
+U00228,103,30044.53,Paris,Standard,Food,20240607,age_hors_intervalle
+U00230,18,-230.75,Rennes,Premium,"Automotive,Books,Food,Home & Garden",20231021,income <= 0
+U00244,14,86059.67,Lille,VIP,Toys,20240723,age_hors_intervalle
+U00269,8,35457.68,Paris,Standard,"Electronics,Automotive",20230516,age_hors_intervalle
+U00291,117,24722.42,Paris,Budget,Food,20250716,age_hors_intervalle
+U00299,25,-1500.0,Toulouse,Standard,"Health,Clothing",20250526,income <= 0
+U00326,-3,73098.79,Nice,Premium,"Automotive,Electronics",20230904,age_hors_intervalle
+U00377,12,22092.55,Paris,Budget,"Clothing,Sports,Food",20250430,age_hors_intervalle
+U00393,140,47336.88,Marseille,Standard,"Health,Food",20240712,age_hors_intervalle
+U00428,103,40839.77,Grenoble,Standard,"Toys,Home & Garden,Sports",20240607,age_hors_intervalle
+U00593,77,0.0,Dijon,Standard,"Health,Toys,Sports",20250913,income <= 0
+U00612,61,-230.75,Bordeaux,Budget,"Books,Toys",20240616,income <= 0
+U00635,117,81654.6,Lille,Premium,Automotive,20250705,age_hors_intervalle
+U00639,51,0.0,Grenoble,VIP,"Books,Beauty",20230127,income <= 0
+U00664,14,19478.5,Reims,Budget,"Home & Garden,Beauty",20231001,age_hors_intervalle
+U00702,57,0.0,Rennes,Standard,"Beauty,Sports",20240426,income <= 0
+U00723,34,-230.75,Paris,Budget,"Health,Clothing",20240608,income <= 0
+U00747,38,-1500.0,Paris,Budget,"Electronics,Sports",20241205,income <= 0
+U00777,36,0.0,Dijon,Budget,"Beauty,Toys",20230213,income <= 0
+U00831,8,27642.27,Angers,Standard,"Sports,Books",20240801,age_hors_intervalle
+U00867,140,28187.07,Paris,Budget,"Beauty,Health,Food",20250209,age_hors_intervalle
+U00869,40,-230.75,Strasbourg,Budget,"Automotive,Books",20240410,income <= 0
+U00907,57,-230.75,Lille,Premium,"Home & Garden,Sports",20250613,income <= 0
+U00924,14,26402.32,Paris,Budget,"Electronics,Home & Garden,Sports",20241228,age_hors_intervalle
+U00927,36,0.0,Montpellier,Budget,Electronics,20240809,income <= 0
+U01016,12,74585.94,Marseille,Premium,"Electronics,Automotive,Beauty,Health",20241117,age_hors_intervalle
+U01053,8,19629.14,Lyon,Budget,"Automotive,Food",20230429,age_hors_intervalle
+U01058,20,0.0,Paris,Budget,"Home & Garden,Automotive",20241014,income <= 0
+U01083,103,48713.45,Paris,Premium,Automotive,20250702,age_hors_intervalle
+U01130,67,0.0,Rennes,Standard,"Automotive,Home & Garden",20241102,income <= 0
+U01339,12,32485.76,Villeurbanne,Standard,"Books,Beauty",20240627,age_hors_intervalle
+U01405,140,30066.74,Grenoble,Budget,Books,20240827,age_hors_intervalle
+U01413,0,60598.01,Nice,Premium,Electronics,20250610,age_hors_intervalle
+U01414,103,28292.41,Marseille,Budget,"Toys,Clothing",20230510,age_hors_intervalle
+U01416,8,33210.76,Montpellier,Standard,"Toys,Clothing,Home & Garden",20230419,age_hors_intervalle
+U01443,44,0.0,Nice,Budget,"Health,Automotive,Books",20240529,income <= 0
+U01457,103,37374.8,Paris,Standard,"Home & Garden,Electronics,Automotive,Beauty",20240911,age_hors_intervalle
+U01483,103,51805.97,Bordeaux,Standard,"Books,Electronics,Home & Garden,Toys",20241122,age_hors_intervalle
+U01485,55,0.0,Angers,Budget,Toys,20250209,income <= 0
+U01603,-3,42159.51,Lyon,Premium,"Sports,Health",20231006,age_hors_intervalle
+U01699,140,15332.5,Toulouse,Budget,"Automotive,Books,Toys,Health",20240420,age_hors_intervalle
+U01736,117,13471.58,Nantes,Budget,"Beauty,Toys",20240509,age_hors_intervalle
+U01754,30,-230.75,Strasbourg,Standard,"Sports,Home & Garden,Books",20230625,income <= 0
+U01760,117,67934.07,Paris,Premium,"Clothing,Home & Garden",20250606,age_hors_intervalle
+U01781,25,0.0,Nice,Standard,"Food,Home & Garden,Health,Electronics",20250317,income <= 0
+U01809,56,-230.75,Nice,Standard,"Books,Toys",20240808,income <= 0
+U01819,14,33496.03,Marseille,Standard,"Home & Garden,Automotive",20230713,age_hors_intervalle
+U01822,117,48324.22,Reims,Standard,"Electronics,Automotive",20241017,age_hors_intervalle
+U01844,14,59454.39,Toulouse,Standard,"Sports,Food,Toys",20230424,age_hors_intervalle
+U01849,-3,23307.37,Rennes,Standard,"Sports,Food,Books",20230101,age_hors_intervalle
+U01854,8,67814.23,Paris,Premium,"Automotive,Toys",20250320,age_hors_intervalle
+U01891,12,37025.6,Toulouse,Premium,Books,20250829,age_hors_intervalle
+U01900,38,-1500.0,Le Havre,Premium,"Electronics,Toys",20250511,income <= 0
+U01927,0,69451.47,Nice,Premium,"Electronics,Clothing,Books",20230723,age_hors_intervalle
+U01987,50,0.0,Villeurbanne,Budget,"Beauty,Health",20230523,income <= 0
+U02050,70,-230.75,Marseille,Budget,"Toys,Beauty,Automotive",20240716,income <= 0
+U02056,-3,45235.29,Nice,Standard,"Electronics,Books,Toys",20241010,age_hors_intervalle
+U02106,140,24374.78,Lyon,Budget,"Sports,Home & Garden",20230427,age_hors_intervalle
+U02182,103,20736.8,Lyon,Budget,Food,20241114,age_hors_intervalle
+U02241,103,36382.74,Marseille,Standard,Sports,20240717,age_hors_intervalle
+U02244,0,164371.46,Marseille,VIP,"Beauty,Electronics,Clothing,Automotive",20230119,age_hors_intervalle
+U02258,117,40490.66,Dijon,Standard,Sports,20250301,age_hors_intervalle
+U02275,8,27179.36,Marseille,Budget,"Home & Garden,Books,Food,Toys",20250121,age_hors_intervalle
+U02341,103,43542.04,Paris,Standard,"Sports,Health,Food",20241108,age_hors_intervalle
+U02344,16,-1500.0,Bordeaux,Standard,"Food,Toys,Electronics",20240229,income <= 0
+U02359,8,44924.46,Nice,Standard,Home & Garden,20230930,age_hors_intervalle
+U02409,40,-1500.0,Marseille,Standard,Electronics,20250506,income <= 0
+U02416,0,26150.0,Bordeaux,Standard,"Books,Clothing,Beauty",20240721,age_hors_intervalle
+U02420,117,64952.41,Toulon,Premium,Beauty,20240707,age_hors_intervalle
+U02432,12,26676.17,Marseille,Standard,"Books,Clothing",20250129,age_hors_intervalle
+U02516,14,18784.03,Le Havre,Budget,"Clothing,Toys,Sports,Electronics",20250414,age_hors_intervalle
+U02520,43,-230.75,Reims,Standard,Automotive,20250305,income <= 0
+U02579,8,24104.14,Lille,Budget,"Books,Food,Sports",20230823,age_hors_intervalle
+U02604,25,-230.75,Rennes,Standard,"Clothing,Automotive",20240413,income <= 0
+U02624,16,-230.75,Bordeaux,Budget,Electronics,20250207,income <= 0
+U02698,103,17060.54,Marseille,Budget,"Automotive,Beauty,Books,Health",20230503,age_hors_intervalle
+U02718,45,0.0,Saint-Etienne,Premium,Home & Garden,20230104,income <= 0
+U02725,36,-230.75,Paris,Budget,Food,20240604,income <= 0
+U02728,117,61441.37,Lille,Premium,"Clothing,Toys,Sports",20230106,age_hors_intervalle
+U02742,12,42191.99,Toulouse,Standard,"Electronics,Beauty",20231225,age_hors_intervalle
+U02754,25,0.0,Toulouse,Standard,"Books,Sports,Health,Electronics",20250107,income <= 0
+U02847,103,26890.44,Toulouse,Budget,"Automotive,Health,Clothing",20230922,age_hors_intervalle
+U02874,103,47413.2,Nice,Standard,"Home & Garden,Books",20240901,age_hors_intervalle
+U02879,0,42327.33,Paris,Standard,"Food,Clothing,Automotive",20241209,age_hors_intervalle
+U02896,61,0.0,Rennes,Standard,"Electronics,Beauty",20241005,income <= 0
+U02920,12,21654.7,Reims,Budget,"Health,Home & Garden",20230223,age_hors_intervalle
+U02921,34,-230.75,Nantes,Standard,"Books,Electronics,Sports",20250303,income <= 0
+U02922,0,19003.71,Marseille,Standard,"Automotive,Home & Garden,Electronics",20230605,age_hors_intervalle
+U02942,40,-1500.0,Lille,VIP,Toys,20240919,income <= 0
+U02955,8,0.0,Paris,Premium,"Sports,Toys,Electronics,Home & Garden",20240724,age_hors_intervalle | income <= 0
+U03060,140,71432.46,Nice,Standard,"Toys,Sports",20250622,age_hors_intervalle
+U03168,0,36110.19,Montpellier,Standard,"Automotive,Food,Electronics",20250114,age_hors_intervalle
+U03198,117,12338.51,Angers,Budget,"Food,Clothing",20250121,age_hors_intervalle
+U03272,103,13018.26,Paris,Budget,"Sports,Electronics,Home & Garden",20250711,age_hors_intervalle
+U03278,12,53265.14,,Premium,"Health,Books,Home & Garden,Sports",20250123,age_hors_intervalle
+U03385,0,98386.45,Strasbourg,VIP,"Automotive,Food,Sports",20240612,age_hors_intervalle
+U03428,0,37853.55,Paris,Standard,"Toys,Home & Garden",20240314,age_hors_intervalle
+U03491,140,70052.78,Paris,Premium,"Electronics,Food",20241026,age_hors_intervalle
+U03516,37,0.0,Dijon,Standard,Beauty,20250212,income <= 0
+U03522,47,-1500.0,Paris,Premium,"Home & Garden,Automotive,Toys",20230407,income <= 0
+U03560,12,26057.79,Bordeaux,Standard,Health,20250715,age_hors_intervalle
+U03619,59,0.0,Bordeaux,Standard,Toys,20241213,income <= 0
+U03642,0,47453.85,Lille,Standard,Food,20240911,age_hors_intervalle
+U03676,34,-1500.0,Bordeaux,VIP,Health,20250614,income <= 0
+U03735,140,26443.97,Marseille,Budget,"Health,Food,Electronics",20230822,age_hors_intervalle
+U03770,117,23929.99,Lille,Budget,"Home & Garden,Beauty",20250203,age_hors_intervalle
+U03788,33,-230.75,Le Havre,Premium,"Sports,Clothing,Food",20240816,income <= 0
+U03884,26,0.0,Lyon,Budget,Beauty,20240225,income <= 0
+U03896,-3,25668.04,Toulouse,Budget,"Sports,Beauty",20230113,age_hors_intervalle
+U03920,61,0.0,Marseille,Premium,"Electronics,Beauty,Clothing",20240602,income <= 0
+U04086,-3,138757.94,Toulouse,VIP,Electronics,20240720,age_hors_intervalle
+U04096,43,0.0,Nîmes,Standard,Beauty,20230728,income <= 0
+U04098,54,0.0,Rennes,VIP,Sports,20241215,income <= 0
+U04102,103,83073.73,Marseille,Premium,"Sports,Clothing,Beauty",20230705,age_hors_intervalle
+U04147,140,21327.05,Nantes,Budget,"Toys,Automotive",20250827,age_hors_intervalle
+U04217,19,0.0,Nice,Standard,Health,20230214,income <= 0
+U04219,0,141173.33,Nice,VIP,"Beauty,Home & Garden",20231126,age_hors_intervalle
+U04358,61,-1500.0,Dijon,Budget,"Beauty,Clothing",20231025,income <= 0
+U04362,0,20117.78,Marseille,Budget,"Books,Electronics",20230915,age_hors_intervalle
+U04421,8,84671.44,Toulouse,Premium,"Electronics,Home & Garden",20240204,age_hors_intervalle
+U04449,12,51997.23,Villeurbanne,Premium,Food,20250315,age_hors_intervalle
+U04479,43,0.0,Nantes,Premium,"Books,Health,Electronics",20250208,income <= 0
+U04490,8,23024.2,Angers,Budget,"Electronics,Toys",20230820,age_hors_intervalle
+U04545,58,-1500.0,Paris,Standard,"Clothing,Automotive,Electronics,Sports",20231218,income <= 0
+U04555,117,43748.53,Nice,Standard,"Automotive,Clothing",20230920,age_hors_intervalle
+U04586,32,0.0,Bordeaux,Standard,Clothing,20240324,income <= 0
+U04673,32,0.0,Strasbourg,Premium,"Food,Sports,Home & Garden",20241010,income <= 0
+U04692,103,108889.09,Reims,VIP,"Electronics,Home & Garden,Books",20240518,age_hors_intervalle
+U04735,103,49746.58,Lille,Standard,"Books,Health",20250115,age_hors_intervalle
+U04838,16,0.0,Lyon,Standard,Food,20231028,income <= 0
+U04890,0,40090.94,Nantes,Standard,"Automotive,Home & Garden",20230712,age_hors_intervalle
+U04927,12,75609.51,Paris,VIP,"Food,Health",20240205,age_hors_intervalle
+U05048,34,0.0,Paris,Premium,Beauty,20250320,income <= 0
+U05095,140,32565.53,Paris,Standard,"Toys,Electronics",20240213,age_hors_intervalle
+U05141,34,0.0,Lyon,Budget,"Books,Automotive,Electronics",20250116,income <= 0
+U05269,35,0.0,Saint-Etienne,Budget,Books,20241130,income <= 0
+U05283,103,0.0,Nantes,Budget,Beauty,20250122,age_hors_intervalle | income <= 0
+U05296,117,28797.67,Montpellier,Standard,"Home & Garden,Food",20240105,age_hors_intervalle
+U05366,0,27534.12,Strasbourg,Budget,"Health,Electronics,Toys",20230210,age_hors_intervalle
+U05409,140,55556.68,Paris,Standard,Books,20241220,age_hors_intervalle
+U05426,103,43733.43,Villeurbanne,Standard,"Food,Electronics,Sports",20230710,age_hors_intervalle
+U05433,39,0.0,Lyon,Premium,"Food,Electronics,Clothing",20250712,income <= 0
+U05453,12,17007.96,Bordeaux,Budget,"Automotive,Home & Garden,Electronics",20240625,age_hors_intervalle
+U05552,140,23320.97,Strasbourg,Budget,"Health,Automotive",20230727,age_hors_intervalle
+U05638,60,0.0,Lyon,VIP,"Home & Garden,Books,Toys",20241203,income <= 0
+U05699,-3,36897.75,Grenoble,Standard,"Home & Garden,Sports,Books",20250510,age_hors_intervalle
+U05794,36,-230.75,Rennes,Premium,Clothing,20241217,income <= 0
+U05797,103,12462.83,Toulouse,Budget,Food,20240409,age_hors_intervalle
+U05801,12,28439.68,Nîmes,Budget,Sports,20240513,age_hors_intervalle
+U05830,14,19306.27,Marseille,Budget,"Automotive,Beauty,Books",20231129,age_hors_intervalle
+U05862,140,38609.95,Lyon,Premium,Home & Garden,20240718,age_hors_intervalle
+U05866,117,32372.08,Paris,Standard,Sports,20240211,age_hors_intervalle
+U05933,0,28495.12,Rennes,Budget,"Sports,Books",20250506,age_hors_intervalle
+U05964,57,0.0,Dijon,VIP,"Books,Beauty",20230328,income <= 0
+U06161,8,22501.99,Lyon,Standard,"Beauty,Health",20250123,age_hors_intervalle
+U06218,-3,20693.33,Marseille,Budget,Toys,20231204,age_hors_intervalle
+U06280,67,0.0,Saint-Etienne,Budget,"Toys,Home & Garden",20231016,income <= 0
+U06418,140,33765.67,Saint-Etienne,Budget,Sports,20230731,age_hors_intervalle
+U06433,103,22757.46,Toulouse,Standard,"Sports,Food",20240417,age_hors_intervalle
+U06459,14,23724.86,Toulouse,Budget,Health,20230825,age_hors_intervalle
+U06471,0,62801.84,Strasbourg,VIP,Sports,20231007,age_hors_intervalle
+U06472,16,0.0,Paris,Premium,"Electronics,Books",20230805,income <= 0
+U06537,14,22889.32,Angers,Budget,Health,20230623,age_hors_intervalle
+U06545,117,110448.56,Nice,VIP,"Food,Health",20230725,age_hors_intervalle
+U06589,117,21571.68,Villeurbanne,Budget,"Toys,Clothing,Electronics",20230108,age_hors_intervalle
+U06593,-3,74207.01,Paris,Premium,"Automotive,Health",20250227,age_hors_intervalle
+U06602,24,-1500.0,Paris,Standard,"Electronics,Food,Beauty,Sports",20230414,income <= 0
+U06621,55,0.0,Nantes,Budget,"Books,Beauty",20240607,income <= 0
+U06625,53,0.0,Marseille,Standard,"Food,Electronics,Beauty,Automotive",20230323,income <= 0
+U06685,12,34104.86,Paris,Standard,"Clothing,Automotive",20240507,age_hors_intervalle
+U06740,50,0.0,Paris,Standard,"Electronics,Food,Automotive",20230502,income <= 0
+U06800,8,23472.5,Villeurbanne,Standard,"Food,Toys,Sports,Beauty",20240813,age_hors_intervalle
+U06868,0,31895.14,Lyon,Standard,"Clothing,Home & Garden",20250218,age_hors_intervalle
+U06876,117,34334.15,Nice,Standard,Automotive,20230220,age_hors_intervalle
+U06877,21,0.0,Strasbourg,Budget,Beauty,20250112,income <= 0
+U06879,0,11374.73,Dijon,Budget,"Automotive,Electronics",20240313,age_hors_intervalle
+U06899,8,33751.43,Montpellier,Standard,Clothing,20250815,age_hors_intervalle
+U06906,-3,86613.12,Paris,Premium,"Clothing,Automotive,Sports,Beauty",20241226,age_hors_intervalle
+U06909,140,37311.3,Nice,Standard,"Home & Garden,Sports,Automotive",20230313,age_hors_intervalle
+U06958,23,0.0,Lille,Budget,"Clothing,Food,Toys",20250315,income <= 0
+U06973,54,0.0,Paris,Standard,"Sports,Home & Garden,Books,Health",20240818,income <= 0
+U06976,140,52110.48,Rennes,Premium,"Sports,Food",20230512,age_hors_intervalle
+U07005,53,-230.75,Bordeaux,Standard,"Books,Sports,Health",20231018,income <= 0
+U07039,23,0.0,Dijon,Standard,Health,20250506,income <= 0
+U07068,38,-1500.0,Dijon,Budget,"Home & Garden,Food",20240917,income <= 0
+U07229,40,-230.75,Paris,Budget,"Sports,Food,Books,Toys",20250626,income <= 0
+U07258,140,48443.68,Paris,Standard,Food,20230220,age_hors_intervalle
+U07272,32,-230.75,Montpellier,VIP,Beauty,20240821,income <= 0
+U07282,-3,32929.48,Strasbourg,Standard,"Health,Sports",20250630,age_hors_intervalle
+U07311,103,17867.11,Marseille,Standard,Clothing,20241111,age_hors_intervalle
+U07432,14,48502.07,Grenoble,Premium,"Sports,Electronics",20231004,age_hors_intervalle
+U07433,45,0.0,Lille,Standard,Automotive,20230813,income <= 0
+U07476,14,48870.26,Le Havre,Premium,"Food,Health,Automotive",20230509,age_hors_intervalle
+U07477,65,-230.75,Rennes,VIP,Toys,20240512,income <= 0
+U07499,60,0.0,Angers,Standard,Health,20240729,income <= 0
+U07539,140,20364.34,Rennes,Budget,"Clothing,Health",20250101,age_hors_intervalle
+U07596,0,20574.73,Paris,Budget,Books,20240522,age_hors_intervalle
+U07611,36,-1500.0,Lille,Budget,"Home & Garden,Books",20240210,income <= 0
+U07625,103,56533.58,Paris,Standard,Automotive,20230311,age_hors_intervalle
+U07654,12,22980.57,Toulouse,Budget,Home & Garden,20241208,age_hors_intervalle
+U07685,117,19087.36,Lille,Budget,"Food,Home & Garden",20240131,age_hors_intervalle
+U07687,43,0.0,Paris,Budget,"Beauty,Health,Automotive",20250314,income <= 0
+U07698,0,41338.34,Paris,Standard,"Food,Electronics",20230715,age_hors_intervalle
+U07704,14,21648.48,Lyon,Standard,"Electronics,Clothing",20250525,age_hors_intervalle
+U07714,12,59468.42,Lyon,Premium,"Beauty,Food,Toys",20241231,age_hors_intervalle
+U07724,46,0.0,Toulouse,Premium,"Toys,Food,Sports",20240705,income <= 0
+U07732,8,28602.83,Paris,Budget,"Toys,Beauty",20240830,age_hors_intervalle
+U07762,21,0.0,Paris,Budget,Clothing,20250824,income <= 0
+U07778,55,-230.75,,Standard,"Clothing,Beauty,Sports",20250228,income <= 0
+U07789,25,0.0,Toulon,Standard,"Books,Food,Automotive",20241108,income <= 0
+U07847,32,0.0,Lyon,Budget,"Food,Clothing,Electronics",20250425,income <= 0
+U07848,8,77873.52,Paris,Premium,"Home & Garden,Health",20230720,age_hors_intervalle
+U07893,0,50453.61,Nantes,Standard,"Beauty,Automotive",20240115,age_hors_intervalle
+U07937,117,30239.09,Montpellier,Standard,"Health,Sports,Beauty",20230420,age_hors_intervalle
+U07947,45,0.0,Strasbourg,Budget,Food,20240716,income <= 0
+U07967,76,0.0,Bordeaux,VIP,"Food,Sports",20230316,income <= 0
+U07989,34,0.0,Saint-Etienne,Premium,"Clothing,Health",20230615,income <= 0
+U08033,-3,26738.94,Marseille,Budget,Health,20230822,age_hors_intervalle
+U08054,140,24896.11,Reims,Standard,"Books,Health,Electronics",20241001,age_hors_intervalle
+U08065,117,18231.55,Montpellier,Budget,"Beauty,Health",20230518,age_hors_intervalle
+U08106,140,17351.0,Villeurbanne,Budget,"Electronics,Beauty",20240221,age_hors_intervalle
+U08107,42,0.0,Dijon,Standard,"Electronics,Toys,Food,Books",20231221,income <= 0
+U08141,34,-230.75,Nice,Standard,"Automotive,Home & Garden,Clothing",20230125,income <= 0
+U08155,8,27485.18,Le Havre,Budget,"Toys,Food",20230108,age_hors_intervalle
+U08177,50,0.0,Strasbourg,Budget,Sports,20250107,income <= 0
+U08237,63,-230.75,Nantes,Budget,"Automotive,Home & Garden",20250616,income <= 0
+U08257,14,24562.07,Saint-Etienne,Standard,"Books,Sports,Electronics,Food",20230716,age_hors_intervalle
+U08315,0,26619.76,Lille,Standard,"Home & Garden,Clothing",20240505,age_hors_intervalle
+U08358,24,0.0,Marseille,Standard,Sports,20250103,income <= 0
+U08398,103,32029.9,Le Havre,Standard,"Books,Food",20240731,age_hors_intervalle
+U08417,31,0.0,Saint-Etienne,Standard,Health,20240718,income <= 0
+U08600,14,64630.15,Reims,Premium,"Food,Health,Beauty",20230302,age_hors_intervalle
+U08680,117,31648.56,Reims,Standard,Beauty,20230206,age_hors_intervalle
+U08716,12,26855.53,Marseille,Budget,Books,20241103,age_hors_intervalle
+U08740,28,0.0,Paris,Budget,Automotive,20241220,income <= 0
+U08761,117,40507.44,Lyon,Standard,"Books,Automotive,Electronics",20250412,age_hors_intervalle
+U08781,140,16211.7,Paris,Budget,"Home & Garden,Health,Electronics",20241215,age_hors_intervalle
+U08782,8,17018.78,Toulouse,Budget,Sports,20230920,age_hors_intervalle
+U08831,16,0.0,Paris,Standard,"Sports,Home & Garden,Automotive",20231005,income <= 0
+U08841,12,68083.71,Marseille,VIP,"Sports,Home & Garden,Books,Beauty",20230828,age_hors_intervalle
+U08865,36,-230.75,Toulouse,Standard,"Health,Food,Electronics,Books",20231013,income <= 0
+U08867,17,-1500.0,Lyon,Standard,Sports,20230913,income <= 0
+U08936,-3,92241.15,Strasbourg,Premium,"Food,Beauty,Electronics",20250311,age_hors_intervalle
+U08952,16,0.0,Toulouse,Standard,"Food,Electronics,Clothing,Books",20250413,income <= 0
+U09002,12,106487.26,Toulouse,VIP,"Automotive,Books",20240320,age_hors_intervalle
+U09080,12,74038.09,Le Havre,Premium,Food,20250329,age_hors_intervalle
+U09118,22,0.0,Paris,Premium,"Sports,Clothing",20240608,income <= 0
+U09123,14,9000.0,Strasbourg,Budget,"Automotive,Beauty",20240421,age_hors_intervalle
+U09146,140,104743.56,Toulouse,VIP,"Health,Books,Automotive,Electronics",20250407,age_hors_intervalle
+U09161,140,13740.76,Rennes,Budget,"Food,Sports",20241203,age_hors_intervalle
+U09177,-3,53340.5,Paris,Standard,Food,20240717,age_hors_intervalle
+U09211,37,-230.75,Paris,Budget,Books,20230727,income <= 0
+U09334,103,38646.21,Lille,Standard,Toys,20240909,age_hors_intervalle
+U09336,14,18230.56,Rennes,Budget,"Food,Automotive",20231031,age_hors_intervalle
+U09364,0,55898.63,Paris,Premium,Clothing,20230922,age_hors_intervalle
+U09366,117,-230.75,Lille,Standard,"Automotive,Food,Toys",20250214,age_hors_intervalle | income <= 0
+U09413,117,19483.21,Toulouse,Budget,"Food,Health,Electronics",20230201,age_hors_intervalle
+U09428,39,0.0,Lyon,Standard,Automotive,20230327,income <= 0
+U09462,140,25472.68,,Standard,"Home & Garden,Toys,Health",20240707,age_hors_intervalle
+U09482,12,83973.74,Nice,Premium,"Health,Toys,Electronics",20230822,age_hors_intervalle
+U09489,103,12374.44,Paris,Standard,Home & Garden,20240717,age_hors_intervalle
+U09497,50,-1500.0,Lyon,Standard,"Food,Automotive,Sports",20250621,income <= 0
+U09527,38,-230.75,Nantes,Premium,Beauty,20230425,income <= 0
+U09591,14,33696.41,Nantes,Standard,"Home & Garden,Beauty,Health",20250907,age_hors_intervalle
+U09596,23,-230.75,Lyon,Premium,"Sports,Automotive",20241124,income <= 0
+U09757,28,0.0,Paris,Premium,"Health,Home & Garden,Automotive",20250719,income <= 0
+U09778,-3,35016.33,Nantes,Budget,Books,20250512,age_hors_intervalle
+U09784,103,30551.43,Dijon,Standard,"Automotive,Food",20230503,age_hors_intervalle
+U09793,16,0.0,Nantes,Standard,"Electronics,Home & Garden,Clothing,Automotive",20231118,income <= 0
+U09812,103,36513.27,Lyon,Premium,"Food,Electronics,Automotive,Beauty",20250206,age_hors_intervalle
+U09829,0,80166.67,Toulouse,Premium,Automotive,20230727,age_hors_intervalle
+U09919,103,44892.57,Toulouse,Standard,"Food,Automotive",20230611,age_hors_intervalle
+U09961,12,26216.36,Nîmes,Budget,"Automotive,Food,Toys",20240108,age_hors_intervalle
+U09983,117,41086.74,Paris,Standard,Books,20230425,age_hors_intervalle
+U10007,12,87036.09,Strasbourg,Premium,"Beauty,Home & Garden,Sports,Clothing",20240916,age_hors_intervalle
+U10032,140,23634.27,Paris,Budget,"Toys,Beauty,Automotive",20250704,age_hors_intervalle
+U10097,41,0.0,Montpellier,Standard,"Food,Books",20240729,income <= 0
+U10099,68,0.0,Montpellier,Premium,Beauty,20250224,income <= 0
+U10160,12,38731.2,Toulouse,Standard,"Books,Food,Health,Automotive",20230113,age_hors_intervalle
+U10181,0,48050.58,Lyon,Premium,"Health,Automotive",20240610,age_hors_intervalle
+U10204,45,0.0,Paris,Premium,"Food,Electronics",20230920,income <= 0
+U10222,117,17134.34,Nîmes,Budget,Electronics,20231001,age_hors_intervalle
+U10271,0,61197.66,Nantes,Premium,Electronics,20240620,age_hors_intervalle
+U10300,103,34743.53,Nîmes,Premium,"Electronics,Health",20240727,age_hors_intervalle
+U10312,12,50524.02,Paris,Premium,"Sports,Food",20231025,age_hors_intervalle
+U10317,8,86577.57,Nice,Premium,"Electronics,Automotive,Home & Garden",20240818,age_hors_intervalle
+U10386,-3,0.0,Rennes,Standard,"Home & Garden,Sports,Toys,Food",20250119,age_hors_intervalle | income <= 0
+U10457,103,46369.18,Nantes,Standard,"Toys,Electronics,Food",20230213,age_hors_intervalle
+U10460,14,45655.76,Toulouse,Premium,"Automotive,Toys",20230802,age_hors_intervalle
+U10474,8,18779.07,Paris,Budget,Health,20230124,age_hors_intervalle
+U10490,-3,21952.94,Lille,Budget,Health,20240813,age_hors_intervalle
+U10521,34,-230.75,Nice,Standard,"Toys,Home & Garden,Beauty,Electronics",20230924,income <= 0
+U10541,32,-1500.0,Nantes,Premium,"Electronics,Home & Garden,Automotive,Toys",20241125,income <= 0
+U10574,8,54221.59,Paris,Premium,"Home & Garden,Food",20240808,age_hors_intervalle
+U10700,-3,47589.97,Nice,Standard,"Home & Garden,Automotive",20250721,age_hors_intervalle
+U10718,-3,23460.29,Saint-Etienne,Standard,"Sports,Home & Garden",20241009,age_hors_intervalle
+U10762,40,-1500.0,Dijon,Budget,Books,20230711,income <= 0
+U10773,51,-230.75,Paris,Premium,"Automotive,Beauty,Clothing,Food",20230321,income <= 0
+U10803,103,45891.59,Montpellier,Standard,"Electronics,Automotive",20230507,age_hors_intervalle
+U10808,43,0.0,Montpellier,Standard,"Sports,Clothing",20250713,income <= 0
+U10827,12,20619.02,Toulouse,Budget,"Home & Garden,Clothing,Food",20230531,age_hors_intervalle
+U10845,0,64285.94,Toulouse,Premium,Toys,20241026,age_hors_intervalle
+U10870,117,56301.38,Strasbourg,Standard,"Beauty,Food",20230616,age_hors_intervalle
+U10989,22,0.0,Toulouse,Standard,Health,20240325,income <= 0
+U11030,16,0.0,Paris,Standard,"Automotive,Sports,Home & Garden",20241206,income <= 0
+U11040,103,43550.35,Marseille,Standard,Toys,20240125,age_hors_intervalle
+U11090,-3,65830.52,Nantes,Premium,Books,20230327,age_hors_intervalle
+U11114,49,-230.75,Nantes,Budget,"Food,Automotive",20231017,income <= 0
+U11181,-3,17698.24,Angers,Budget,Toys,20250913,age_hors_intervalle
+U11191,14,40356.78,Paris,Standard,"Clothing,Sports,Home & Garden",20250903,age_hors_intervalle
+U11195,40,-230.75,Saint-Etienne,Premium,"Toys,Clothing,Electronics",20240305,income <= 0
+U11201,117,24473.92,Paris,Budget,"Automotive,Clothing",20230217,age_hors_intervalle
+U11203,0,16081.52,Nice,Budget,"Books,Automotive",20250706,age_hors_intervalle
+U11212,-3,34465.12,Nantes,Standard,"Health,Food",20250517,age_hors_intervalle
+U11266,-3,29479.89,Toulouse,Budget,"Toys,Books,Food",20231115,age_hors_intervalle
+U11286,117,41053.28,Lille,Standard,"Electronics,Food,Toys",20250828,age_hors_intervalle
+U11308,48,-1500.0,Marseille,Premium,"Home & Garden,Beauty,Automotive",20250213,income <= 0
+U11335,103,36119.9,Paris,VIP,Beauty,20240814,age_hors_intervalle
+U11363,0,62276.52,Montpellier,Premium,Food,20250131,age_hors_intervalle
+U11384,103,27833.99,Lille,Budget,"Electronics,Books",20240919,age_hors_intervalle
+U11414,14,50752.97,Marseille,Premium,"Food,Home & Garden,Sports,Toys",20250628,age_hors_intervalle
+U11426,0,33076.86,Paris,Standard,Books,20230125,age_hors_intervalle
+U11529,49,0.0,Paris,Standard,"Electronics,Home & Garden,Sports",20250714,income <= 0
+U11555,117,44330.75,Nantes,Standard,"Toys,Electronics",20240623,age_hors_intervalle
+U11593,140,94556.98,Nice,Premium,"Beauty,Electronics,Health,Automotive",20240505,age_hors_intervalle
+U11619,55,-230.75,Strasbourg,Premium,"Food,Electronics,Home & Garden,Clothing",20250106,income <= 0
+U11657,117,22716.26,Toulouse,Budget,Books,20231129,age_hors_intervalle
+U11663,8,46259.38,Montpellier,Standard,"Toys,Electronics,Food",20250409,age_hors_intervalle
+U11701,32,-1500.0,Lyon,Premium,Sports,20230506,income <= 0
+U11707,103,23848.56,Strasbourg,Budget,"Automotive,Books",20250623,age_hors_intervalle
+U11722,42,-1500.0,Paris,VIP,"Health,Electronics,Automotive",20241212,income <= 0
+U11723,54,0.0,Nice,Standard,"Electronics,Home & Garden,Books",20250205,income <= 0
+U11731,43,0.0,Lyon,Standard,Electronics,20250213,income <= 0
+U11802,8,19237.47,Lyon,Budget,"Food,Sports,Books,Health",20230928,age_hors_intervalle
+U11839,-3,28452.66,Nîmes,Budget,"Sports,Food",20250127,age_hors_intervalle
+U11840,36,0.0,Rennes,Standard,"Clothing,Toys,Books",20230507,income <= 0
+U11945,58,0.0,,Premium,"Food,Toys",20230806,income <= 0
+U11961,-3,94572.53,Toulouse,VIP,"Automotive,Clothing,Home & Garden",20250223,age_hors_intervalle
+U11962,12,87281.58,Toulouse,VIP,"Books,Sports,Food,Home & Garden",20250129,age_hors_intervalle
