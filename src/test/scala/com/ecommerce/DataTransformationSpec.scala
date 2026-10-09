@@ -7,7 +7,10 @@ import com.typesafe.config.ConfigFactory
 import org.apache.spark.sql.functions.col
 import org.scalatest.funsuite.AnyFunSuite
 
-/** Jointures, fenêtres et détection de comportements (Membre B). */
+/**
+ * Jointures, fenêtres et détection de comportements (Q3.2, Q3.3, Q3.4).
+ * Tests de base : Salikhate. Tests complémentaires : Ndéye Woré THIANDOUM (Membre B).
+ */
 class DataTransformationSpec extends AnyFunSuite {
 
   private val spark = SparkTestSession.spark
@@ -32,6 +35,12 @@ class DataTransformationSpec extends AnyFunSuite {
   ).toDS().toDF()
 
   private lazy val enriched = transformation.enrichTransactionData(transactions, users, products, merchants)
+
+  // Enrichit une liste de transactions de l'utilisateur U1 (usage dans les tests ci-dessous)
+  private def enrich(txs: Seq[Transaction]) =
+    transformation.enrichTransactionData(txs.toDS().toDF(), users, products, merchants)
+
+  // ------------------------------ tests de base ------------------------------
 
   test("jointures LEFT : aucune transaction perdue, l'orphelin garde des colonnes nulles") {
     assert(enriched.count() == 5)
@@ -74,5 +83,57 @@ class DataTransformationSpec extends AnyFunSuite {
     assert(r.getAs[Int]("cond_crypto") == 1)
     assert(r.getAs[Int]("is_suspicious") == 1)
     assert(e.filter(col("transaction_id") === "A1").head().getAs[Int]("is_suspicious") == 0)
+  }
+
+  // ------------------------- tests complémentaires -------------------------
+
+  test("utilisateur actif : 5 jours distincts sur 7 jours") {
+    val five = (1 to 5).map(i => tx(s"D$i", "U1", 10.0, s"2024020${i}100000"))
+    val e = enrich(five)
+    def active(id: String) = e.filter(col("transaction_id") === id).head().getAs[Int]("is_active_user")
+    assert(active("D4") == 0) // 4 jours distincts
+    assert(active("D5") == 1) // 5 jours distincts
+  }
+
+  test("utilisateur actif : plusieurs achats le même jour comptent pour un seul jour") {
+    val sameDay = (1 to 6).map(i => tx(s"S$i", "U1", 10.0, s"202402010${i}0000"))
+    assert(enrich(sameDay).filter(col("is_active_user") === 1).count() == 0)
+  }
+
+  test("fenêtre de 7 jours calendaires : jour courant + 6 précédents") {
+    def lastActive(days: Seq[Int]): Int = {
+      val txs = days.map(d => tx(s"W$d", "U1", 10.0, f"202402$d%02d100000"))
+      enrich(txs).filter(col("transaction_id") === s"W${days.last}").head().getAs[Int]("is_active_user")
+    }
+    assert(lastActive(Seq(1, 2, 3, 4, 7)) == 1) // du 1er au 7 : 5 jours distincts
+    assert(lastActive(Seq(1, 2, 3, 4, 8)) == 0) // du 2 au 8 : seulement 4 jours distincts
+  }
+
+  test("condition délai : moins de 5 minutes avec l'achat précédent") {
+    val txs = Seq(
+      tx("Q1", "U1", 10.0, "20240201100000"),
+      tx("Q2", "U1", 10.0, "20240201100300"), // 3 minutes après Q1
+      tx("Q3", "U1", 10.0, "20240201110000")) // 57 minutes après Q2
+    val e = transformation.addSuspiciousFlags(enrich(txs))
+    def delai(id: String) = e.filter(col("transaction_id") === id).head().getAs[Int]("cond_delai")
+    assert(delai("Q1") == 0) // premier achat : pas de délai
+    assert(delai("Q2") == 1)
+    assert(delai("Q3") == 0)
+  }
+
+  test("transactions suspectes : seulement is_suspicious = 1, triées par montant décroissant") {
+    val many = (1 to 6).map(i => tx(s"A$i", "U1", 10.0, s"2024010${i}100000"))
+    val big1 = tx("BIG", "U1", 5000.0, "20240110030000", "CRYPTO")
+    val big2 = tx("BIG2", "U1", 3000.0, "20240111030000", "CRYPTO")
+    val e = transformation.addSuspiciousFlags(enrich(many :+ big1 :+ big2))
+    val ids = transformation.suspiciousTransactions(e).select("transaction_id").as[String].collect().toSeq
+    assert(ids == Seq("BIG", "BIG2"))
+  }
+
+  test("export transactions_enrichies : 36 colonnes dans l'ordre du sujet") {
+    val out = transformation.exportEnriched(transformation.addSuspiciousFlags(enriched))
+    assert(out.columns.length == 36)
+    assert(out.columns.head == "transaction_id")
+    assert(out.columns.last == "is_suspicious")
   }
 }
