@@ -14,20 +14,30 @@ object AgeGroups {
   val All = Seq(Jeune, Adulte, AgeMoyen, Senior)
 }
 
-/** Enrichissement et fenêtrage des transactions (Membre B). */
+/**
+ * Enrichissement et fenêtrage des transactions (Membre B).
+ *
+ * Étapes de enrichTransactionData :
+ *   1. jointures LEFT avec users, products et merchants (colonnes homonymes renommées) ;
+ *   2. conversion du timestamp texte en date, puis appel de l'UDF des caractéristiques temporelles ;
+ *   3. tranche d'âge, rang et nombre total de transactions par utilisateur (fenêtres).
+ * Puis addBehaviorFeatures ajoute le montant cumulé, l'utilisateur actif et le délai entre achats.
+ */
 class DataTransformation(spark: SparkSession, cfg: AppConfig) {
 
+  // UDF créée une seule fois, avec les heures de bureau lues dans la configuration
   private val extractUdf = TimeFeatures.extractTimeFeaturesUdf(cfg.workingHoursStart, cfg.workingHoursEnd)
 
+  // broadcast : la petite table est envoyée à tous les exécuteurs, ce qui évite un shuffle de la grande table
   private def bc(df: DataFrame): DataFrame = if (cfg.enableBroadcast) broadcast(df) else df
 
   /** Tranche d'âge. Le sujet laisse l'âge 25 non défini : il est rattaché à « Adulte » (25 à 44 ans). */
   def ageGroup(age: Column): Column =
-    when(age.isNull, lit(null).cast("string"))
-      .when(age < 25, lit(AgeGroups.Jeune))
-      .when(age < 45, lit(AgeGroups.Adulte))
-      .when(age < 65, lit(AgeGroups.AgeMoyen))
-      .otherwise(lit(AgeGroups.Senior))
+    when(age.isNull, lit(null).cast("string"))   // âge inconnu : valeur nulle
+      .when(age < 25, lit(AgeGroups.Jeune))      // moins de 25 ans
+      .when(age < 45, lit(AgeGroups.Adulte))     // de 25 à 44 ans
+      .when(age < 65, lit(AgeGroups.AgeMoyen))   // de 45 à 64 ans
+      .otherwise(lit(AgeGroups.Senior))          // 65 ans et plus
 
   /** Q3.2 : jointures (toutes en LEFT depuis les transactions valides), UDF temporelle, fenêtres, tranche d'âge. */
   def enrichTransactionData(transactions: DataFrame, users: DataFrame, products: DataFrame, merchants: DataFrame): DataFrame = {
@@ -39,24 +49,28 @@ class DataTransformation(spark: SparkSession, cfg: AppConfig) {
       col("merchant_id"), col("name").as("merchant_name"), col("category").as("merchant_category"),
       col("region"), col("commission_rate"))
 
+    // LEFT : une transaction valide n'est jamais perdue, même si sa référence est orpheline
     val joined = transactions
       .join(bc(usersSel), Seq("user_id"), "left")
       .join(bc(productsSel), Seq("product_id"), "left")
       .join(bc(merchantsSel), Seq("merchant_id"), "left")
 
     val withTime = joined
+      // texte yyyyMMddHHmmss -> vrai timestamp, utilisé pour ordonner les fenêtres
       .withColumn("transaction_date", to_timestamp(col("timestamp"), "yyyyMMddHHmmss"))
       .withColumn("time_features", extractUdf(col("timestamp")))
       .select(col("*"), col("time_features.*")) // struct éclatée en colonnes simples (compatible CSV)
       .drop("time_features")
 
+    // Fenêtre par utilisateur, ordonnée par date puis par identifiant (ordre déterministe en cas d'égalité)
     val wUser = Window.partitionBy("user_id").orderBy(col("transaction_date"), col("transaction_id"))
+    // Fenêtre par utilisateur sans ordre : elle couvre toutes ses transactions
     val wUserAll = Window.partitionBy("user_id")
 
     val enriched = withTime
       .withColumn("age_group", ageGroup(col("age")))
-      .withColumn("transaction_rank", row_number().over(wUser))
-      .withColumn("total_transactions_user", count(lit(1)).over(wUserAll))
+      .withColumn("transaction_rank", row_number().over(wUser))              // 1 = première transaction du client
+      .withColumn("total_transactions_user", count(lit(1)).over(wUserAll))   // total des transactions du client
 
     addBehaviorFeatures(enriched)
   }
@@ -70,10 +84,13 @@ class DataTransformation(spark: SparkSession, cfg: AppConfig) {
     val wDays = Window.partitionBy("user_id").orderBy(col("day_num")).rangeBetween(-6L, 0L)
     val wUser = Window.partitionBy("user_id").orderBy(col("transaction_date"), col("transaction_id"))
 
+    // day_num : numéro du jour depuis le 01/01/1970, nécessaire pour une fenêtre exprimée en jours
     df.withColumn("day_num", datediff(to_date(col("transaction_date")), lit("1970-01-01")))
       .withColumn("montant_cumule_7j", round(sum("amount").over(wSeconds), 2))
+      // nombre de jours différents où l'utilisateur a acheté pendant les 7 derniers jours
       .withColumn("distinct_days_7j", size(array_distinct(collect_list(col("day_num")).over(wDays))))
       .withColumn("is_active_user", when(col("distinct_days_7j") >= cfg.activeMinDistinctDays, 1).otherwise(0))
+      // lag : date de la transaction précédente du même utilisateur (null pour la première)
       .withColumn("jours_depuis_achat_precedent",
         datediff(col("transaction_date"), lag(col("transaction_date"), 1).over(wUser)))
       .drop("day_num", "distinct_days_7j")
@@ -83,17 +100,23 @@ class DataTransformation(spark: SparkSession, cfg: AppConfig) {
   def addSuspiciousFlags(df: DataFrame): DataFrame = {
     val wAll = Window.partitionBy("user_id")
     val wUser = Window.partitionBy("user_id").orderBy(col("transaction_date"), col("transaction_id"))
+    // Panier moyen historique : moyenne de toutes les transactions de l'utilisateur (transaction courante incluse)
     val avgAmount = avg("amount").over(wAll)
     val prevSeconds = lag(col("transaction_date").cast("long"), 1).over(wUser)
 
     df.withColumn("panier_moyen_user", round(avgAmount, 2))
       .withColumn("ecart_panier_moyen_pct", round((col("amount") - avgAmount) / avgAmount * 100, 2))
       .withColumn("delai_precedente_minutes", round((col("transaction_date").cast("long") - prevSeconds) / 60.0, 2))
+      // Condition 1 : montant supérieur de plus de 300 % au panier moyen (soit plus de 4 fois la moyenne)
       .withColumn("cond_montant", when(col("amount") > avgAmount * (1 + cfg.suspiciousAmountPct / 100.0), 1).otherwise(0))
+      // Condition 2 : transaction pendant la période « Night »
       .withColumn("cond_night", when(col("day_period") === "Night", 1).otherwise(0))
+      // Condition 3 : moins de 5 minutes après la transaction précédente (null pour la première : condition fausse)
       .withColumn("cond_delai", when(col("delai_precedente_minutes") < cfg.suspiciousMaxDelayMinutes, 1).otherwise(0))
+      // Condition 4 : paiement en crypto-monnaie
       .withColumn("cond_crypto", when(col("payment_method") === "CRYPTO", 1).otherwise(0))
       .withColumn("nb_conditions", col("cond_montant") + col("cond_night") + col("cond_delai") + col("cond_crypto"))
+      // Suspecte si au moins 2 conditions sur 4 sont remplies
       .withColumn("is_suspicious", when(col("nb_conditions") >= cfg.suspiciousMinConditions, 1).otherwise(0))
   }
 
@@ -108,8 +131,8 @@ class DataTransformation(spark: SparkSession, cfg: AppConfig) {
 
   /** Transactions suspectes uniquement, triées par montant décroissant. */
   def suspiciousTransactions(df: DataFrame): DataFrame = df.filter(col("is_suspicious") === 1).select(
-    "transaction_id", "user_id", "merchant_id", "transaction_date", "amount", "panier_moyen_user",
-    "ecart_panier_moyen_pct", "day_period", "delai_precedente_minutes", "payment_method",
-    "cond_montant", "cond_night", "cond_delai", "cond_crypto", "nb_conditions", "is_suspicious")
+      "transaction_id", "user_id", "merchant_id", "transaction_date", "amount", "panier_moyen_user",
+      "ecart_panier_moyen_pct", "day_period", "delai_precedente_minutes", "payment_method",
+      "cond_montant", "cond_night", "cond_delai", "cond_crypto", "nb_conditions", "is_suspicious")
     .orderBy(col("amount").desc)
 }
