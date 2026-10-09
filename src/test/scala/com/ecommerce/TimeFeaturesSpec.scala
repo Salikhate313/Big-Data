@@ -3,7 +3,7 @@ package com.ecommerce
 import com.ecommerce.analytics.TimeFeatures
 import org.scalatest.funsuite.AnyFunSuite
 
-/** Tests de la fonction pure derrière l'UDF extractTimeFeatures (Membre B). */
+/** Tests de la fonction pure derrière l'UDF extractTimeFeatures (Membre B) ndeye wore thiandoum. */
 class TimeFeaturesSpec extends AnyFunSuite {
 
   test("nuit de semaine : 2024-07-01 02:18:22 (lundi)") {
